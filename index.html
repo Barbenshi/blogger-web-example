@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body class="main-layout">
+    <div class="main-screen" onclick="onToggleMenu()"></div>
+
+    <div class="read-modal full hide flex justify-center align-center">
+        <section class="content-container flex flex-column space-evenly align-center">
+            <button onclick="onToggleModal()" class="close-btn">X</button>
+            <h2>Join us to get access to the latest stories!</h2>
+            <form onsubmit="onSubmitForm(event)" class="flex flex-column space-evenly align-center">
+                <input type="email" placeholder="Enter your email">
+                <button class="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <header class="main-header full main-layout">
+        <section class="nav flex align-center space-between">
+            <div class="logo"><span>Blogin</span>.</div>
+            <nav class="main-nav">
+                <ul class="clean-list flex">
+                    <li onclick="onToggleActive(this)" class="drop-down"><a href="#">Journal</a>
+                        <ul class="drop-down clean-list flex">
+                            <li><a href="" >October 2016</a></li>
+                            <li><a href="">January 2017</a></li>
+                            <li><a href="">April 2017</a></li>
+                            <li><a href="">July 2017</a></li>
+                        </ul>
+                    </li>
+                    <li onclick="onToggleActive(this)"><a href="#">About</a></li>
+                    <li onclick="onToggleActive(this)"><a href="#">Work</a></li>
+                    <li onclick="onToggleActive(this)"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="btn-menu" onclick="onToggleMenu()">☰</button>
+        </section>
+    </header>
+    <main class="cards-list full main-layout">
+        <section class="card-preview">
+            <img src="img/Layer_2.jpg" alt="">
+            <section class="preview-content">
+                <h2 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est
+                    laborum. </p>
+                <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur...</p>
+                <button type="button" class="btn-read btn-round" onclick="onToggleModal()">Continue Reading</button>
+            </section>
+        </section>
+        <section class="card-preview">
+            <img src="img/Layer_3.jpg" alt="">
+            <section class="preview-content">
+                <h2 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est
+                    laborum. </p>
+                <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur...</p>
+                <button type="button" class="btn-read btn-round" onclick="onToggleModal()">Continue Reading </button>
+            </section>
+        </section>
+        <section class="card-preview">
+            <img src="img/Layer_4.jpg" alt="">
+            <section class="preview-content">
+                <h2 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est
+                    laborum. </p>
+                <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur...</p>
+                <button type="button" class="btn-read btn-round" onclick="onToggleModal()">Continue Reading</button>
+            </section>
+        </section>
+
+
+        <footer class="secondary-footer main-layout">
+            <div class="paging-btns flex space-between">
+                <button type="button" class="btn-prev">Previous</button>
+                <button type="button" class="btn-next">Next</button>
+            </div>
+        </footer>
+    </main>
+
+
+    <footer class="main-footer full flex align-center space-evenly">
+        <div class="logo dark"><span>Blogin</span>.</div>
+        <small class="copy-rights">© 2014 Blogin.com - All Rights Reserved - Find more free Templates at <strong>Pixelhint.com</strong> </small>
+        <section class="social">
+            <ul class="social-links fa-brands clean-list flex align-center justify-center">
+                <li ><a href="#" class="facebook"></a></li>
+                <li ><a href="#" class="twitter"></a></li>
+                <li ><a href="#" class="behance"></a></li>
+                <li ><a href="#" class="dribbble"></a></li>
+            </ul>
+        </section>
+    </footer>
+    </nav>
+    </header>
+
+    <script>
+
+        function onToggleActive(el){
+            const elActiveLi = document.querySelector('li.active')
+            if (elActiveLi && elActiveLi !== el) elActiveLi.classList.remove('active')
+            el.classList.toggle('active')
+        }
+
+        function onToggleModal(){
+            document.querySelector('.read-modal').classList.toggle('hide')
+        }
+
+        function onSubmitForm(ev){
+            ev.preventDefault()
+
+            onToggleModal()
+        }
+
+        function onToggleMenu(){
+            document.body.classList.toggle('menu-open')
+        }
+    </script>
+</body>
+
+</html>
